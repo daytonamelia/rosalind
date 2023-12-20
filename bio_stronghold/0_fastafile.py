@@ -24,4 +24,4 @@ def load_fastaseq_list(path):
                 retlist += line
     return retlist
 
-print(load_fasta_dict("bio_stronghold/5_testfile.txt"))
+print(load_fasta_dict("5_testfile.txt"))
