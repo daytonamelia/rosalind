@@ -4,18 +4,18 @@ def load_fasta_dict(path):
     retdict = {}
     with builtins.open(path, 'r') as f:
         for line in f:
-            if '>' in line:
-                key = line
+            if line.startswith('>'):
+                key = line.strip()
                 retdict[key] = ""
             else:
-                retdict[key] += line
+                retdict[key] += line.strip()
     return retdict
 
 def load_file_list(path):
     retlist = []
     with open(path, 'r') as f:
         for line in f:
-            retlist += line
+            retlist += line.strip()
     return retlist
 
 def load_fastaseq_list(path):
@@ -23,7 +23,5 @@ def load_fastaseq_list(path):
     with open(path, 'r') as f:
         for line in f:
             if '>' not in line:
-                retlist += line
+                retlist += line.strip()
     return retlist
-
-print(load_fasta_dict("bio_stronghold/5_testfile.txt"))
