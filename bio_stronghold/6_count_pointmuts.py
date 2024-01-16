@@ -1,6 +1,3 @@
-import filedefs as fd
-import builtins
-
 def hamming_distance(s,t):
     if len(s) != len(t):
         return KeyError("Strings are not of same length!")
