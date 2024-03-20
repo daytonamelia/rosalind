@@ -24,7 +24,7 @@ def load_fastaseq_list(path):
                 retlist += line.strip()
     return retlist
 
-codon2prot = {
+codon_protein_dict = {
 "UUU" : "F",
 "CUU" : "L",
 "AUU" : "I",

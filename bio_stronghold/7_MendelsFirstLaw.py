@@ -1,4 +1,4 @@
-def MendelsFirst(k, m, n, dominant=True):
+def mendels_first(k, m, n, dominant=True):
     # P_dom = n_dominant/n_total or 1 - n_recessive/n_total
     # k = AA homozygous dominant
     # m = Aa heterozygous
@@ -20,5 +20,4 @@ def MendelsFirst(k, m, n, dominant=True):
     else:
         return round(1 - sum(punnet_dom.values())/fullpop/(fullpop-1), 5)
         
-MendelsFirst(25, 24, 16)
-
+mendels_first(25, 24, 16)
