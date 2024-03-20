@@ -18,10 +18,15 @@ def load_file_list(path):
 
 def load_fastaseq_list(path):
     retlist = []
+    potentialseq = ''
     with open(path, 'r') as f:
-        for line in f:
+        for i, line in enumerate(f):
             if '>' not in line:
-                retlist += line.strip()
+                potentialseq += line.strip()
+            if '>' in line and i != 0:
+                retlist.append(potentialseq)
+                potentialseq = ''
+        retlist.append(potentialseq)
     return retlist
 
 codon_protein_dict = {
