@@ -21,3 +21,4 @@ def MendelsFirst(k, m, n, dominant=True):
         return round(1 - sum(punnet_dom.values())/fullpop/(fullpop-1), 5)
         
 MendelsFirst(25, 24, 16)
+

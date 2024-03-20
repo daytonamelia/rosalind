@@ -14,4 +14,3 @@ for key, value in fastadict.items():
 max_key = max(gc_cont, key=gc_cont.get)
 
 print(str(max_key[1:]), gc_cont[max_key])
-
