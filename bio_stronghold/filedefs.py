@@ -1,12 +1,17 @@
 def load_fasta_dict(path):
     retdict = {}
+    potentialseq = ''
     with open(path, 'r') as f:
-        for line in f:
+        for i, line in enumerate(f):
             if line.startswith('>'):
                 key = line.strip()
                 retdict[key] = ""
-            else:
-                retdict[key] += line.strip()
+                if i != 0:
+                    retdict[key] = potentialseq
+                    potentialseq = ''
+            if '>' not in line:
+                potentialseq += line.strip()
+        retdict[key] = potentialseq
     return retdict
 
 def load_file_list(path):
