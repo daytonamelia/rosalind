@@ -4,11 +4,11 @@ def load_fasta_dict(path):
     with open(path, 'r') as f:
         for i, line in enumerate(f):
             if line.startswith('>'):
-                key = line.strip()
-                retdict[key] = ""
                 if i != 0:
                     retdict[key] = potentialseq
                     potentialseq = ''
+                key = line.strip()
+                retdict[key] = ""
             if '>' not in line:
                 potentialseq += line.strip()
         retdict[key] = potentialseq
